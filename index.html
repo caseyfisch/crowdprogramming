@@ -11,15 +11,17 @@
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     </head>
     <body>
+      
+
 
     <div class="container">
-      <div class="panel panel-info">
+      <div class="panel panel-info" id="instructionsPanel">
         <div class="panel-heading">
           <h3 class="panel-title">
-          <a data-toggle="collapse" href="#instructions">Instructions</a></h3>
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#instructionsPanel" href="#instructions">Instructions</a></h3>
         </div>
-        <div class="panel-collapse collapse" id="instructions">
-          <h3>Count the number of unique people that appear in each photo.</h3>
+        <div class="panel-body panel-collapse collapse in" id="instructions">
+          <p>Count the number of unique people that appear in each photo.</p>
           <ul>
               <li>You can either count manually and enter the number in the text box labeled 
               "Number of People," or you can use the tool below to help count them.</li>
@@ -31,6 +33,8 @@
           </ul>
         </div>
       </div>
+      
+      
 
         <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -63,8 +67,12 @@
         
 
         <div class="row">
-            <div class="col-md-8">Photo</div>
+            <div class="col-md-8">
+              <img class="img-responsive" src="https://lh6.googleusercontent.com/2Hi2eltHJfBSQySQio-SkR1Oj4vUQZEtrwQ1XdqbmiOTUhuzxYfW5ELgiElyu1G-ewH3QWtorQ1nzC0WvXA_Q1FLCNkSNPFwv6e2OniGW6ReJs4qEw-x-Alprh7egRVi6nioUm4" alt="">
+            
+            </div>
             <div class="col-md-4">
+              
                 <h4>Tool Controls:</h4>
                 
                 <div class="btn-group" role="group" aria-label="marking">
@@ -92,14 +100,25 @@
                     <label for="personCount">Number of People</label>
                     <input type="number" class="form-control" id="personCount" placeholder="0">
                   </div>
-                  <div class="btn-group" role="group" aria-label="zooming">
-                    <button type="button" class="btn btn-default">Previous Image</button>
-                    <button type="button" class="btn btn-default">Next Image</button>
-                  </div> <!-- /.btn-group -->
               </form><!-- /.form -->
+              
+              <nav>
+                <ul class="pager">
+                  <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="next"><a href="#">Next Image <span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+              </nav>
+              
+              <h4>Hot Keys:</h4>
+              <ul>
+                <li>M: Activate marking mode</li>
+                <li>R: Activate mark removal mode</li>
+              </ul>
+              
             </div><!-- /.col-md-4 form -->
         </div>
 
+      
     </div> <!-- /container -->
 
   </body>
