@@ -4,21 +4,101 @@
         <title>People Counting</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
-        Hello world!
 
+    <div class="container">
+        
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Instructions</h3>
+          </div>
+          <div class="panel-body">
+              <h3>Count the number of unique people that appear in each photo.</h3>
+
+              <ul>
+                  <li>You can either count manually and enter the number in the text box labeled "Number of People," or you can use the tool below to help count them.</li>
+                  <li>To use the tool, select "+" and click on the photo where you want to mark a person as "counted."  If you want to remove one of these markings, select "-' and click on the marking.  A counter will keep track of how many people you have marked on the image.</li>
+                  <li>You can use the zoom-in and out buttons to resize the image.</li>
+                  <li>Use the previous and next buttons to navigate to the previous or next image.</li>
+              </ul>
+          </div>
+        </div>
+
+        
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Photo</a>
+            </div><!-- /.navbar-header -->
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        
         <button class="btn btn-info">Info Button</button>
         <button class="btn btn-success">Submit</button>
         
         <div class="row">
-              <div class="col-xs-2">Left section</div>
-              <div class="col-xs-8">Middle section</div>
-              <div class="col-xs-2">Right section</div>
+            <div class="col-md-12">Instructions</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">Photo</div>
+            <div class="col-md-4">
+                The controls for image marking will be here...<br/>
+                <div class="btn-group" role="group" aria-label="marking">
+                    <button type="button" class="btn btn-lg btn-default" aria-label="Add marking">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-lg btn-default" aria-label="Remove marking">
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <br />
+                <br />
+                <div class="btn-group" role="group" aria-label="zooming">
+                    <button type="button" class="btn btn-lg btn-default" aria-label="Zoom in">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-lg btn-default" aria-label="Zoom out">
+                      <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
         </div>
 
-    </body>
+    </div> <!-- /container -->
+
+  </body>
+    
+    
 </html>
