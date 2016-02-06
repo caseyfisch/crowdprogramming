@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Image clicking</title>
+    </head>
+    <body>
+        
+        <div id="images"></div>
+        <canvas style="margin:0;padding:0;position:relative;left:50px;top:50px;" 
+          id="imgCanvas" width="500" height="500" onclick="draw(event)"></canvas>
+        <p id="count">0</p>
+        <p id="pos"></p>
+        
+
+        <script>
+            var canvas = document.getElementById("imgCanvas");
+            var context = canvas.getContext("2d");
+            var counter = 0;
+            var position_array = [];
+            
+            function createImageOnCanvas(imageId) {
+                canvas.style.display = "block";
+                document.getElementById("images").style.overflowY = "hidden";
+                var img = new Image(300, 300);
+                img.src = document.getElementById(imageId).src;
+                context.drawImage(img, (0), (0)); //onload....
+            }
+            
+            // Array Remove - By John Resig (MIT Licensed)
+            Array.prototype.remove = function(from, to) {
+              var rest = this.slice((to || from) + 1 || this.length);
+              this.length = from < 0 ? this.length + from : from;
+              return this.push.apply(this, rest);
+            };
+            
+            Array.prototype.contains = function(obj) {
+                var i = this.length;
+                console.log("Searching for " + obj.x + ", " + obj.y)
+                while (i--) {
+                    console.log("Found " + this[i].x + ", " + this[i].y);
+                    if (obj.x - 15 <= this[i].x && 
+                        this[i].x <= obj.x + 15 && 
+                        obj.y - 15 <= this[i].y &&
+                        this[i].y <= obj.y + 15) {
+                        console.log("true!");
+                        context.clearRect(this[i].x - 10, this[i].y - 10, 20, 20);
+
+                        this.remove(i,i);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+            function draw(e) {
+                var pos = getMousePos(canvas, e);
+                var posx = pos.x;
+                var posy = pos.y;
+                console.log("before if");
+                if (position_array.contains(pos)) {
+                    console.log("in here");
+                    context.strokeStyle = "rgba(0,0,0,1)";
+                    context.globalCompositeOperation = "destination-out";  
+                    context.strokeStyle = ("rgba(255,255,255,255)");
+                    console.log("is it gone? " + position_array.contains(pos));
+                    counter -= 1;
+                } else {
+                    console.log("lol");
+                    context.globalCompositeOperation = "source-over";  
+
+                    context.fillStyle = "#000000";
+                    context.beginPath();
+                    context.arc(posx, posy, 10, 0, 2*Math.PI);
+                    context.fill();
+                    context.closePath();
+                    
+                    counter += 1;
+                    position_array.push(pos);
+
+                }
+                var i;
+                document.getElementById("pos").innerHTML = "";
+                for (i = 0; i < position_array.length; i++) { 
+                    document.getElementById("pos").innerHTML += "(" + position_array[i].x + ", " + position_array[i].y + ") <br /> ";
+                }
+                document.getElementById("count").innerHTML = counter;
+
+            }
+            
+            function getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                  x: evt.clientX - rect.left,
+                  y: evt.clientY - rect.top
+                };
+            }
+            
+            window.draw = draw;
+        </script>
+    </body>
+</html>

@@ -9,6 +9,7 @@
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     </head>
     <body>
       
@@ -23,105 +24,201 @@
         <div class="panel-body panel-collapse collapse in" id="instructions">
           <p>Count the number of unique people that appear in each photo.</p>
           <ul>
-              <li>You can either count manually and enter the number in the text box labeled 
-              "Number of People," or you can use the tool below to help count them.</li>
-              <li>To use the tool, select "+" and click on the photo where you want to mark a person as "counted."  
-              If you want to remove one of these markings, select "-' and click on the marking.  A counter will 
-              keep track of how many people you have marked on the image.</li>
-              <li>You can use the zoom-in and out buttons to resize the image.</li>
+              <li>To count the people in each picture, just click on each distinguishable person in the image to help you count.</li>
+              <li>To remove a marking, just click on it.</li>
+              <li>A counter will keep track of the number of people for you.</li>
               <li>Use the previous and next buttons to navigate to the previous or next image.</li>
           </ul>
           
-          <p>You will receive a per-image bonus depending on how closely your answers align with other workers'.</p>
+          <p>You will be paid a flat rate for completing the HIT, and then earn a bonus of $0.01 for every 5 people you identify</p>
+          
+          <p>Here are some examples to help you:</p>
+          <ul>
+            <li>Example 1</li>
+            <li>Example 2</li>
+            <li>Example 3</li>
+          </ul>
+          
+          <p>Feel free to collapse this instruction panel by clicking on the "Instructions" title.</p>
         </div>
       </div>
       
-      
-
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Photo</a>
-            </div><!-- /.navbar-header -->
+    
         
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-        
-
-        <div class="row">
-            <div class="col-md-8">
-              <img class="img-responsive" src="https://lh6.googleusercontent.com/2Hi2eltHJfBSQySQio-SkR1Oj4vUQZEtrwQ1XdqbmiOTUhuzxYfW5ELgiElyu1G-ewH3QWtorQ1nzC0WvXA_Q1FLCNkSNPFwv6e2OniGW6ReJs4qEw-x-Alprh7egRVi6nioUm4" alt="">
-            
+        <section class="container" id="photo1" style="height:125vh; padding-top:100px;">
+          <div class="row">
+            <div class="container"  value="Count">
+              <img class="img-responsive" src="images/people1.jpg" alt="" style="width:100%;">
             </div>
-            <div class="col-md-4">
+          </div>
+          <div class="row">
+            <form>
+              <div class="form-group" id="mturk_form">
+                <label for="personCount1"><h4>How many people?</h4></label>
+                <span id="personCount1"><h2>counter variable</h2></span>
+              </div>
+            </form><!-- /.form -->
               
-                <h4>Tool Controls:</h4>
-                
-                <div class="btn-group" role="group" aria-label="marking">
-                    <button type="button" class="btn btn-lg btn-default" aria-label="Add marking">
-                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-lg btn-default" aria-label="Remove marking">
-                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    </button>
+            <nav>
+              <ul class="pager">
+                <li class="next"><a href="#photo2">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </section><!-- /.container -->
+        
+        <section class="container" id="photo2" style="height:125vh; padding-top:100px;">
+          <div class="row">
+            <div class="container"  value="Count">
+              <img class="img-responsive" src="images/people2.jpg" alt="" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <form>
+              <div class="form-group" id="mturk_form">
+                <label for="personCount2"><h4>How many people?</h4></label>
+                <span id="personCount2"><h2>counter variable</h2></span>
+              </div>
+            </form><!-- /.form -->
+              
+            <nav>
+              <ul class="pager">
+                <li class="previous"><a href="#photo1"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                <li class="next"><a href="#photo3">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
+              </ul>
+            </nav>
+              
+          </div><!-- row -->
+        </section><!-- container -->
+        
+        <section class="container" style="height:125vh; padding-top:100px;" id="photo3">
+            <div class="row">
+              <div class="container"  value="Count">
+                <img class="img-responsive" src="images/people3.jpg" alt="" style="width:100%;">
+              </div>
+            </div>
+            <div class="row">
+              <form>
+                <div class="form-group" id="mturk_form">
+                  <label for="personCount3"><h4>How many people?</h4></label>
+                  <span id="personCount3"><h2>counter variable</h2></span>
                 </div>
-                
-                <div class="btn-group" role="group" aria-label="zooming">
-                    <button type="button" class="btn btn-lg btn-default" aria-label="Zoom in">
-                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-lg btn-default" aria-label="Zoom out">
-                      <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
-                    </button>
-                </div>
-                
-                <br />
-                <br />
-                <form>
-                  <div class="form-group">
-                    <label for="personCount">Number of People</label>
-                    <input type="number" class="form-control" id="personCount" placeholder="0">
-                  </div>
               </form><!-- /.form -->
               
               <nav>
                 <ul class="pager">
-                  <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
-                  <li class="next"><a href="#">Next Image <span aria-hidden="true">&rarr;</span></a></li>
+                  <li class="previous"><a href="#photo2"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="next"><a href="#photo4">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
                 </ul>
               </nav>
+            </div><!-- row -->
+        </section><!-- container -->
+
+        <section class="container" id="photo4" style="height:125vh; padding-top:100px;">
+            <div class="row">
+              <div class="container"  value="Count">
+                <img class="img-responsive" src="images/people4.jpg" alt="" style="width:100%;">
+              </div>
+            </div>
+            <div class="row">
+              <form>
+                <div class="form-group" id="mturk_form">
+                  <label for="personCount4"><h4>How many people?</h4></label>
+                  <span id="personCount4"><h2>counter variable</h2></span>
+                </div>
+              </form><!-- /.form -->
               
-              <h4>Hot Keys:</h4>
-              <ul>
-                <li>M: Activate marking mode</li>
-                <li>R: Activate mark removal mode</li>
-              </ul>
+              <nav>
+                <ul class="pager">
+                  <li class="previous"><a href="#photo3"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="next"><a href="#photo5">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+              </nav>
+            </div><!-- row -->
+        </section><!-- container -->
+        
+        <section class="container" id="photo5" style="height:125vh; padding-top:100px;">
+            <div class="row">
+              <div class="container" value="Count">
+                <img class="img-responsive" src="images/people5.jpg" alt="" style="width:100%;">
+              </div>
+            </div>
+            <div class="row">
+              <form>
+                <div class="form-group" id="mturk_form">
+                  <label for="personCountt"><h4>How many people?</h4></label>
+                  <span id="personCountt"><h2>counter variable</h2></span>
+                </div>
+              </form><!-- /.form -->
               
-            </div><!-- /.col-md-4 form -->
-        </div>
+              <nav>
+                <ul class="pager">
+                  <li class="previous"><a href="#photo4"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="next"><a href="#photo6">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+              </nav>
+            </div><!-- row -->
+        </section><!-- container -->
+        
+        <section class="container"  id="photo6" style="height:125vh; padding-top:100px;">
+            <div class="row">
+              <div class="container" value="Count">
+                <img class="img-responsive" src="images/people6.jpg" alt="" style="width:100%;">
+              </div>
+            </div>
+            <div class="row">
+              <form>
+                <div class="form-group" id="mturk_form">
+                  <label for="personCount6"><h4>How many people?</h4></label>
+                  <span id="personCount6"><h2>counter variable</h2></span>
+                </div>
+              </form><!-- /.form -->
+              
+              <nav>
+                <ul class="pager">
+                  <li class="previous"><a href="#photo5"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="next"><a href="#photo7">Next Image <span id="thing" aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+              </nav>
+            </div><!-- row -->
+        </section><!-- container -->
+        
+        <section class="container" id="photo7" style="height:125vh; padding-top:100px;">
+            <div class="row">
+              <div class="container" value="Count">
+                <img class="img-responsive" src="images/people7.png" alt="" style="width:100%;">
+              </div>
+            </div>
+            <div class="row">
+              <form>
+                <div class="form-group" id="mturk_form">
+                  <label for="personCount7"><h4>How many people?</h4></label>
+                  <span id="personCount7"><h2>counter variable</h2></span>
+                </div>
+              </form><!-- /.form -->
+              
+              <nav>
+                <ul class="pager">
+                  <li class="previous"><a href="#photo6"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                </ul>
+              </nav>
+            </div><!-- row -->
+        </section><!-- container -->
+        
 
       
     </div> <!-- /container -->
+    
+    <script type="text/javascript">
+    //JavaScript goes here
+      /* global myCache */
+      console.log("javascript working");
+      $('#nextPhoto').on('click', function(event) {
+        console.log("in here!");
+        myCache.nextImage("photo");
+      });
+
+    </script>
 
   </body>
     
