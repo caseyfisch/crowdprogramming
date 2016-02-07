@@ -44,18 +44,21 @@
       </div>
       
     
-        
-        <section class="container" id="photo1" style="height:125vh; padding-top:100px;">
+      <section class="container" id="photo1" style="height:150vh;padding-top:100px;">
+        <section class="container">
           <div class="row">
-            <div class="container"  value="Count">
-              <img class="img-responsive" src="images/people1.jpg" alt="" style="width:100%;">
-            </div>
+                <canvas id="canvas1" onclick="draw(event, this.id)"></canvas>
+                <img class="img-responsive" src="images/people1.jpg" id="image1" style="width:100%;display:none;">
+
           </div>
+        </section>
+        
+        <section class="container">
           <div class="row">
             <form>
               <div class="form-group" id="mturk_form">
                 <label for="personCount1"><h4>How many people?</h4></label>
-                <span id="personCount1"><h2>counter variable</h2></span>
+                <span id="personCount1"><h2>0</h2></span>
               </div>
             </form><!-- /.form -->
               
@@ -66,18 +69,18 @@
             </nav>
           </div>
         </section><!-- /.container -->
+      </section>
         
         <section class="container" id="photo2" style="height:125vh; padding-top:100px;">
           <div class="row">
-            <div class="container"  value="Count">
-              <img class="img-responsive" src="images/people2.jpg" alt="" style="width:100%;">
-            </div>
+            <canvas id="canvas2" onclick="draw(event, this.id)"></canvas>
+            <img class="img-responsive" src="images/people2.jpg" id="image2" style="width:100%;display:none;">
           </div>
           <div class="row">
             <form>
               <div class="form-group" id="mturk_form">
                 <label for="personCount2"><h4>How many people?</h4></label>
-                <span id="personCount2"><h2>counter variable</h2></span>
+                <span id="personCount2"><h2>0</h2></span>
               </div>
             </form><!-- /.form -->
               
@@ -93,15 +96,14 @@
         
         <section class="container" style="height:125vh; padding-top:100px;" id="photo3">
             <div class="row">
-              <div class="container"  value="Count">
-                <img class="img-responsive" src="images/people3.jpg" alt="" style="width:100%;">
-              </div>
+              <canvas id="canvas3" onclick="draw(event, this.id)"></canvas>
+                <img class="img-responsive" src="images/people3.jpg" id="image3" style="width:100%;display:none;">
             </div>
             <div class="row">
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount3"><h4>How many people?</h4></label>
-                  <span id="personCount3"><h2>counter variable</h2></span>
+                  <span id="personCount3"><h2>0</h2></span>
                 </div>
               </form><!-- /.form -->
               
@@ -116,15 +118,14 @@
 
         <section class="container" id="photo4" style="height:125vh; padding-top:100px;">
             <div class="row">
-              <div class="container"  value="Count">
-                <img class="img-responsive" src="images/people4.jpg" alt="" style="width:100%;">
-              </div>
+              <canvas id="canvas4" onclick="draw(event, this.id)"></canvas>
+                <img class="img-responsive" src="images/people4.jpg" id="image4" style="width:100%;display:none;">
             </div>
             <div class="row">
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount4"><h4>How many people?</h4></label>
-                  <span id="personCount4"><h2>counter variable</h2></span>
+                  <span id="personCount4"><h2>0</h2></span>
                 </div>
               </form><!-- /.form -->
               
@@ -139,15 +140,14 @@
         
         <section class="container" id="photo5" style="height:125vh; padding-top:100px;">
             <div class="row">
-              <div class="container" value="Count">
-                <img class="img-responsive" src="images/people5.jpg" alt="" style="width:100%;">
-              </div>
+              <canvas id="canvas5" onclick="draw(event, this.id)"></canvas>
+              <img class="img-responsive" src="images/people5.jpg" id="image5" style="width:100%;display:none;">
             </div>
             <div class="row">
               <form>
                 <div class="form-group" id="mturk_form">
-                  <label for="personCountt"><h4>How many people?</h4></label>
-                  <span id="personCountt"><h2>counter variable</h2></span>
+                  <label for="personCount5"><h4>How many people?</h4></label>
+                  <span id="personCount5"><h2>0</h2></span>
                 </div>
               </form><!-- /.form -->
               
@@ -162,15 +162,14 @@
         
         <section class="container"  id="photo6" style="height:125vh; padding-top:100px;">
             <div class="row">
-              <div class="container" value="Count">
-                <img class="img-responsive" src="images/people6.jpg" alt="" style="width:100%;">
-              </div>
+              <canvas id="canvas6" onclick="draw(event, this.id)"></canvas>
+                <img class="img-responsive" src="images/people6.jpg" id="image6" style="width:100%;display:none;">
             </div>
             <div class="row">
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount6"><h4>How many people?</h4></label>
-                  <span id="personCount6"><h2>counter variable</h2></span>
+                  <span id="personCount6"><h2>0</h2></span>
                 </div>
               </form><!-- /.form -->
               
@@ -185,15 +184,14 @@
         
         <section class="container" id="photo7" style="height:125vh; padding-top:100px;">
             <div class="row">
-              <div class="container" value="Count">
-                <img class="img-responsive" src="images/people7.png" alt="" style="width:100%;">
-              </div>
+              <canvas id="canvas7" onclick="draw(event, this.id)"></canvas>
+              <img class="img-responsive" src="images/people7.jpg" id="image7" style="width:100%;display:none;">
             </div>
             <div class="row">
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount7"><h4>How many people?</h4></label>
-                  <span id="personCount7"><h2>counter variable</h2></span>
+                  <span id="personCount7"><h2>0</h2></span>
                 </div>
               </form><!-- /.form -->
               
@@ -209,16 +207,145 @@
       
     </div> <!-- /container -->
     
+    <canvas style="margin:0;padding:0;position:relative;left:50px;top:50px;" 
+          id="imgCanvas" width="500" height="500" onclick="draw(event, this.id)"></canvas>
+    <p id="count">0</p>
+    <p id="pos"></p>
+    
+    
     <script type="text/javascript">
     //JavaScript goes here
-      /* global myCache */
       console.log("javascript working");
-      $('#nextPhoto').on('click', function(event) {
-        console.log("in here!");
-        myCache.nextImage("photo");
-      });
+      
+      var i;
+      var image_canvas_array = [];
+      for (i = 0; i < 7; i++) {
+        image_canvas_array[i] = "canvas" + (i+1);
+        console.log(image_canvas_array[i]);
+      }
+      
+      var counter_array = [];
+      var position_array = [];
+      for (i = 0; i < 7; i++) {
+        position_array[i] = [];
+        counter_array[i] = 0;
+      }
+      
+      var image_counter;
+      var positions;
+      
+
+      window.onload = function() {
+        var i;
+        for (i = 0; i < image_canvas_array.length; i++) {
+            var canvas_id = image_canvas_array[i];
+            console.log(canvas_id);
+            var canvas = document.getElementById(canvas_id);
+            var ctx = canvas.getContext("2d");
+            //var img = document.getElementById("image1");
+            var img = new Image();
+            img.src = "./images/people" + (i+1) + ".jpg";
+            ctx.canvas.width = img.width;
+            ctx.canvas.height = img.height;
+            //console.log(img.width + " " + img.height);
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+        }
+
+      };
+      
+      // Array Remove - By John Resig (MIT Licensed)
+      Array.prototype.remove = function(from, to) {
+        var rest = this.slice((to || from) + 1 || this.length);
+        this.length = from < 0 ? this.length + from : from;
+        return this.push.apply(this, rest);
+      };
+      
+      // Stack overflow ty ty
+      Array.prototype.contains = function(obj) {
+          var i = this.length;
+          //console.log("Searching for " + obj.x + ", " + obj.y)
+          while (i--) {
+              console.log("Found " + this[i].x + ", " + this[i].y);
+              if (obj.x - 4 <= this[i].x && 
+                  this[i].x <= obj.x + 4 && 
+                  obj.y - 4 <= this[i].y &&
+                  this[i].y <= obj.y + 4) {
+                  console.log("true!");
+                  this.remove(i,i);
+                  return true;
+              }
+          }
+          return false;
+      }
+      
+      function draw(e, elem_id) {
+          var canvas = document.getElementById(elem_id);
+          var id = elem_id.charAt(elem_id.length - 1);
+          console.log("ID:" + id);
+          positions = position_array[id - 1];
+          image_counter = counter_array[id - 1];
+          
+          
+          var context = canvas.getContext("2d");
+          context.globalCompositeOperation = "source-over";  
+          context.fillStyle = "#ffffff";
+          
+          var pos = getMousePos(canvas, e);
+          if (positions.contains(pos)) {
+              image_counter -= 1;
+          } else {
+              image_counter += 1;
+              positions.push(pos);
+          }
+          
+          counter_array[id - 1] = image_counter;
+          position_array[id - 1] = positions;
+
+          var i,j;
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          window.onload();
+          
+          for (i = 0; i < 7; i++) {
+            canvas = document.getElementById(image_canvas_array[i]);
+            context = canvas.getContext("2d");
+            positions = position_array[i];
+            for (j = 0; j < positions.length; j++) {
+              var posx = positions[j].x;
+              var posy = positions[j].y;
+              context.fillStyle = "#ffffff";
+              context.strokeStyle = "#0f0f0f"
+
+              context.beginPath();
+              context.arc(posx, posy, 5, 0, 2*Math.PI);
+              context.fill();
+              context.stroke();
+              context.closePath();
+              
+            }
+          }
+          
+          var i;
+          document.getElementById("pos").innerHTML = "";
+          //for (i = 0; i < position_array.length; i++) { 
+          //    document.getElementById("pos").innerHTML += "(" + position_array[i].x + ", " + position_array[i].y + ") <br /> ";
+          //}
+          document.getElementById("personCount" + id).innerHTML = "<h2>" + image_counter + "</h2>";
+
+      }
+      
+      function getMousePos(canvas, evt) {
+          var rect = canvas.getBoundingClientRect();
+          return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+          };
+      }
+      
+      window.draw = draw;
 
     </script>
+    
+    
 
   </body>
     

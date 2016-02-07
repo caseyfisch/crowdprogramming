@@ -38,12 +38,12 @@
                 console.log("Searching for " + obj.x + ", " + obj.y)
                 while (i--) {
                     console.log("Found " + this[i].x + ", " + this[i].y);
-                    if (obj.x - 15 <= this[i].x && 
-                        this[i].x <= obj.x + 15 && 
-                        obj.y - 15 <= this[i].y &&
-                        this[i].y <= obj.y + 15) {
+                    if (obj.x - 10 <= this[i].x && 
+                        this[i].x <= obj.x + 10 && 
+                        obj.y - 10 <= this[i].y &&
+                        this[i].y <= obj.y + 10) {
                         console.log("true!");
-                        context.clearRect(this[i].x - 10, this[i].y - 10, 20, 20);
+                        //context.clearRect(this[i].x - 12, this[i].y - 12, 24, 24);
 
                         this.remove(i,i);
                         return true;
@@ -54,30 +54,41 @@
             
             function draw(e) {
                 var pos = getMousePos(canvas, e);
-                var posx = pos.x;
-                var posy = pos.y;
+                //var posx = pos.x;
+                //var posy = pos.y;
                 console.log("before if");
                 if (position_array.contains(pos)) {
                     console.log("in here");
-                    context.strokeStyle = "rgba(0,0,0,1)";
-                    context.globalCompositeOperation = "destination-out";  
-                    context.strokeStyle = ("rgba(255,255,255,255)");
-                    console.log("is it gone? " + position_array.contains(pos));
                     counter -= 1;
                 } else {
                     console.log("lol");
                     context.globalCompositeOperation = "source-over";  
 
                     context.fillStyle = "#000000";
+
+                    //context.beginPath();
+                    //context.arc(posx, posy, 10, 0, 2*Math.PI);
+                    //context.fill();
+                    //context.closePath();
+                    
+                    counter += 1;
+                    position_array.push(pos);
+                    console.log(position_array);
+
+                }
+                
+                var i;
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                for (i = 0; i < position_array.length; i++) {
+                    console.log(i);
+                    var posx = position_array[i].x;
+                    var posy = position_array[i].y;
                     context.beginPath();
                     context.arc(posx, posy, 10, 0, 2*Math.PI);
                     context.fill();
                     context.closePath();
-                    
-                    counter += 1;
-                    position_array.push(pos);
-
                 }
+                
                 var i;
                 document.getElementById("pos").innerHTML = "";
                 for (i = 0; i < position_array.length; i++) { 
