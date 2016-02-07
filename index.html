@@ -207,11 +207,6 @@
       
     </div> <!-- /container -->
     
-    <canvas style="margin:0;padding:0;position:relative;left:50px;top:50px;" 
-          id="imgCanvas" width="500" height="500" onclick="draw(event, this.id)"></canvas>
-    <p id="count">0</p>
-    <p id="pos"></p>
-    
     
     <script type="text/javascript">
     //JavaScript goes here
@@ -245,16 +240,16 @@
             //var img = document.getElementById("image1");
             var img = new Image();
             img.src = "./images/people" + (i+1) + ".jpg";
-            var temp_width = img.width;
-            var temp_height = img.height;
-            while (temp_width > 900) {
-              temp_width /= 2;
-              temp_height /= 2;
+            if (img.width < 700) {
+              img.width *= 1.4;
+              img.height *= 1.4;
             }
-            img.width = temp_width;
-            img.height = temp_height;
-            ctx.canvas.width = temp_width;
-            ctx.canvas.height = temp_height;
+            if (img.width > 900) {
+              img.width /= 2;
+              img.height /= 2;
+            }
+            ctx.canvas.width = img.width;
+            ctx.canvas.height = img.height;
             //console.log(img.width + " " + img.height);
             ctx.drawImage(img, 0, 0, img.width, img.height);
         }
