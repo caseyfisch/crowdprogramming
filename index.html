@@ -245,8 +245,16 @@
             //var img = document.getElementById("image1");
             var img = new Image();
             img.src = "./images/people" + (i+1) + ".jpg";
-            ctx.canvas.width = img.width;
-            ctx.canvas.height = img.height;
+            var temp_width = img.width;
+            var temp_height = img.height;
+            while (temp_width > 900) {
+              temp_width /= 2;
+              temp_height /= 2;
+            }
+            img.width = temp_width;
+            img.height = temp_height;
+            ctx.canvas.width = temp_width;
+            ctx.canvas.height = temp_height;
             //console.log(img.width + " " + img.height);
             ctx.drawImage(img, 0, 0, img.width, img.height);
         }
