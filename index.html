@@ -25,9 +25,11 @@
             var pair = parampairs[i].split("=");
             if (pair[0] == "assignmentId") {
               if (pair[1] == "ASSIGNMENT_ID_NOT_AVAILABLE") {
-                document.getElementById(&#39previewnotice&#39).innerHTML =
+                console.log("mrow");
+                document.getElementById(previewnotice).innerHTML =
                   "<p><b>You are previewing this HIT.</b>  To perform this HIT, please accept it.</p>";
               } else {
+                console.log("here");
                 assignment_id_field.value = pair[1];
               }
               return;
