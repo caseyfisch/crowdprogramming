@@ -9,11 +9,36 @@
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-      <script src="mturk.js"></script>
-    </head>
-    <body>
+      <!--<script src="mturk.js"></script>-->
       
+        <script type="text/javascript" language="JavaScript">
+         
+        // Given the ID of the assignmentId form field element, populate it
+        // with the assignmentId parameter from the URL.  If no assignment ID
+        // is present, inform the worker that the HIT is being previewed.
+        function populateAssignmentID(field_id) {
+          var assignment_id_field = document.getElementById(field_id);
+          var paramstr = window.location.search.substring(1);
+          var parampairs = paramstr.split("&");
+          var i;
+          for (i in parampairs) {
+            var pair = parampairs[i].split("=");
+            if (pair[0] == "assignmentId") {
+              if (pair[1] == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+                document.getElementById(&#39previewnotice&#39).innerHTML =
+                  "<p><b>You are previewing this HIT.</b>  To perform this HIT, please accept it.</p>";
+              } else {
+                assignment_id_field.value = pair[1];
+              }
+              return;
+            }
+          }
+        }
 
+// --></script>
+    </head>
+    
+    <body onload="populateAssignmentID('myAssignmentId')">
 
     <div class="container">
       <div class="panel panel-info" id="instructionsPanel">
@@ -42,7 +67,7 @@
         </div>
       </div>
       
-      <form id="mturk_form">
+      <form id="mturk_form" action="http://www.mturk.com/mturk/externalSubmit" method="POST">
         <section class="container" id="photo1" style="height:150vh;padding-top:100px;">
           <div class="row">
             <canvas id="canvas1" onclick="draw(event, this.id)"></canvas>
@@ -156,10 +181,11 @@
                 <ul class="pager">
                   <li class="previous"><a href="#photo6"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
                 </ul>
-                <input type="submit" class="btn btn-default">
+                <input type="submit" name="submit" value="Submit Answers" class="btn btn-default" />
               </nav>
             </div>
         </section>
+        <input type="hidden" name="assignmentId" id="myAssignmentId" value="" />
       </form>
     </div> 
 
