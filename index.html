@@ -58,7 +58,7 @@
             <form>
               <div class="form-group" id="mturk_form">
                 <label for="personCount1"><h4>How many people?</h4></label>
-                <span id="personCount1"><h2>0</h2></span>
+                  <input type="number" id="personCount1" readonly="true" value="0">
               </div>
             </form><!-- /.form -->
               
@@ -80,7 +80,7 @@
             <form>
               <div class="form-group" id="mturk_form">
                 <label for="personCount2"><h4>How many people?</h4></label>
-                <span id="personCount2"><h2>0</h2></span>
+                  <input type="number" id="personCount2" readonly="true" value="0">
               </div>
             </form><!-- /.form -->
               
@@ -103,7 +103,7 @@
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount3"><h4>How many people?</h4></label>
-                  <span id="personCount3"><h2>0</h2></span>
+                  <input type="number" id="personCount3" readonly="true" value="0">
                 </div>
               </form><!-- /.form -->
               
@@ -125,7 +125,7 @@
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount4"><h4>How many people?</h4></label>
-                  <span id="personCount4"><h2>0</h2></span>
+                  <input type="number" id="personCount4" readonly="true" value="0">
                 </div>
               </form><!-- /.form -->
               
@@ -147,7 +147,7 @@
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount5"><h4>How many people?</h4></label>
-                  <span id="personCount5"><h2>0</h2></span>
+                  <input type="number" id="personCount5" readonly="true" value="0">
                 </div>
               </form><!-- /.form -->
               
@@ -169,7 +169,7 @@
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount6"><h4>How many people?</h4></label>
-                  <span id="personCount6"><h2>0</h2></span>
+                  <input type="number" id="personCount6" readonly="true" value="0">
                 </div>
               </form><!-- /.form -->
               
@@ -191,13 +191,15 @@
               <form>
                 <div class="form-group" id="mturk_form">
                   <label for="personCount7"><h4>How many people?</h4></label>
-                  <span id="personCount7"><h2>0</h2></span>
+                  <input type="number" id="personCount7" readonly="true" value="0">
                 </div>
               </form><!-- /.form -->
               
               <nav>
                 <ul class="pager">
                   <li class="previous"><a href="#photo6"><span aria-hidden="true">&larr;</span> Previous Image</a></li>
+                  <li class="previous"><button class="submit">
+
                 </ul>
               </nav>
             </div><!-- row -->
@@ -335,7 +337,8 @@
           //for (i = 0; i < position_array.length; i++) { 
           //    document.getElementById("pos").innerHTML += "(" + position_array[i].x + ", " + position_array[i].y + ") <br /> ";
           //}
-          document.getElementById("personCount" + id).innerHTML = "<h2>" + image_counter + "</h2>";
+          document.getElementById("personCount" + id).value = image_counter;
+
 
       }
       
