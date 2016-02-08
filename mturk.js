@@ -1,4 +1,3 @@
-// JavaScript File
 /**
  *  
  *  gup(name) :: retrieves URL parameters if provided
