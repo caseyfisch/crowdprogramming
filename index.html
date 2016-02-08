@@ -237,7 +237,7 @@
       
       function draw(e, elem_id) {
         var aid = document.getElementById("assignmentId");
-        if (aid == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+        if (aid != "ASSIGNMENT_ID_NOT_AVAILABLE") {
           var canvas = document.getElementById(elem_id);
           var id = elem_id.charAt(elem_id.length - 1);
           //console.log("ID:" + id);
