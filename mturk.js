@@ -26,7 +26,8 @@ function gup(name) {
 //  Turkify the captioning page.
 $(document).ready(function () {
   // is assigntmentId is a URL parameter
-  if((aid = gup("assignmentId"))!="" && $(form_selector).length>0) {
+  var aid = gup("assignmentId");
+  if(aid != "" && $(form_selector).length>0) {
 
     // If the HIT hasn't been accepted yet, disabled the form fields.
     if(aid == "ASSIGNMENT_ID_NOT_AVAILABLE") {
@@ -41,7 +42,8 @@ $(document).ready(function () {
     $(form_selector).attr('method', 'POST');
 
     // Set the Action of the form to the provided "turkSubmitTo" field
-    if((submit_url=gup("turkSubmitTo"))!="") {
+    var submit_url = gup("turkSubmitTo");
+    if(submit_url != "") {
       $(form_selector).attr('action', submit_url + '/mturk/externalSubmit');
     }
   }
